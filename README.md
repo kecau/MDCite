@@ -81,7 +81,7 @@ The MDCite dataset is built through a transparent and reproducible pipeline:
 
 ## Code Description
 
-### Data Construction (`Data_Construction/`)
+### Data Construction (`Code_Dataset Construction/`)
 
 #### `collect_by_journal.py`
 - Uses the **Scopus API** to collect journal-level bibliographic metadata.
@@ -100,7 +100,7 @@ Together, these scripts implement the **dataset construction pipeline** describe
 
 ---
 
-### Evaluation (`Evaluation/`)
+### Evaluation (`Code_Evaluation/`)
 
 #### `MDCite_SciCite_eval.ipynb`
 - Implements **BM25-based citation context retrieval**.
