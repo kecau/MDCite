@@ -24,11 +24,11 @@ MDCite is designed as a **realistic IR test collection**, preserving the scale, 
 ## Code Structure
 
 ```
-├── Data_Construction/
+├── Code/Dataset Construction/
 │   ├── batch_paper_title_multi.py
 │   └── collect_by_journal.py
 │
-├── Evaluation/
+├── Code/Evaluation/
 │   └── MDCite_SciCite_eval.ipynb
 │
 └── README.md
