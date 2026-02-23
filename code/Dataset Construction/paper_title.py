@@ -1,7 +1,3 @@
-# paper_title.py
-# SIGIR 2026 Public Release Version
-# Compatible with batch_paper_title_multi.py
-
 import os
 import re
 import csv
