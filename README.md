@@ -25,8 +25,9 @@ MDCite is designed as a **realistic IR test collection**, preserving the scale, 
 
 ```
 ├── Code/Dataset Construction/
-│   ├── batch_paper_title_multi.py
-│   └── collect_by_journal.py
+│   ├── collect_by_journal.py
+│   ├── paper_title.py
+│   └── batch_paper_title_multi.py
 │
 ├── Code/Evaluation/
 │   └── MDCite_SciCite_eval.ipynb
@@ -94,11 +95,18 @@ The MDCite dataset is built through a transparent and reproducible pipeline:
   - Citation count retrieval  
   - Journal-stratified Top-5% cited paper selection  
 - Produces intermediate artifacts used for identifying influential papers.
-- 
-#### `batch_paper_title_multi.py`
-- Resolves DOIs and retrieves citation links via the **OpenAlex API**.
+
+#### `paper_title.py`
+- Core citation context extraction engine.
+- Resolves DOIs (via OpenAlex if necessary).
+- Retrieves citation links via the **OpenAlex API**.
 - Retrieves citation context spans and intent labels via the **Semantic Scholar Graph API**.
-- Designed for efficient large-scale querying over millions of citation records.
+- Outputs structured citation context records used to construct the MDCite dataset.
+  
+#### `batch_paper_title_multi.py`
+- Batch execution wrapper for paper_title.py.
+- Iterates over lists of influential papers and performs large-scale context extraction.
+- Supports scalable querying across multiple journal groups.
 
 Together, these scripts implement the **dataset construction pipeline** described in the SIGIR 2026 paper.
 
