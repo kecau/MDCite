@@ -48,8 +48,12 @@ These records form the foundation of the dataset and are used to identify influe
 WoS subject categories are used to group journals by scientific field and to select **Top-5 Q1 journals per field**, enabling journal-stratified and field-aware normalization.
 
 ### OpenAlex API
-The **OpenAlex API** is used to extract citation links and reference-linked citation context spans from full-text scholarly works that cite the selected influential papers.  
-This enables large-scale extraction of citation contexts suitable for retrieval and intent analysis.
+The **OpenAlex API** is used for DOI resolution and large-scale citation link retrieval (i.e., identifying papers that cite selected influential works).
+
+### Semantic Scholar Graph API
+
+The **Semantic Scholar Graph API** is used to retrieve citation context spans and citation intent labels associated with each citing paper.  
+Citation contexts correspond to textual spans surrounding in-text citation markers.
 
 ---
 
@@ -90,11 +94,11 @@ The MDCite dataset is built through a transparent and reproducible pipeline:
   - Citation count retrieval  
   - Journal-stratified Top-5% cited paper selection  
 - Produces intermediate artifacts used for identifying influential papers.
-
+- 
 #### `batch_paper_title_multi.py`
-- Uses the **OpenAlex API** to batch-collect citing papers and citation-related metadata.
-- Extracts citation links and citation context spans at scale.
-- Designed for efficient large-scale querying over millions of records.
+- Resolves DOIs and retrieves citation links via the **OpenAlex API**.
+- Retrieves citation context spans and intent labels via the **Semantic Scholar Graph API**.
+- Designed for efficient large-scale querying over millions of citation records.
 
 Together, these scripts implement the **dataset construction pipeline** described in the SIGIR 2026 paper.
 
@@ -155,6 +159,15 @@ Baseline BM25 experiments show that MDCite naturally supports deep-retrieval eva
 
 ## Reproducibility
 
+### API Requirements
+
+Reproducing the full dataset construction requires:
+
+- Access to the **Scopus API** (institutional entitlement may be required)
+- Access to the **OpenAlex API** (publicly available)
+- Access to the **Semantic Scholar Graph API** (publicly available; rate limits apply)
+
+API keys, where required, must be supplied via environment variables and are not included in this repository.
 All scripts, intermediate artifacts, and processed datasets are released to support end-to-end reproducible research.  
 Document-level identifiers and clearly separated construction and evaluation code help avoid information leakage and ensure consistent experimental setups.
 
