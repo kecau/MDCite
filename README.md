@@ -51,8 +51,10 @@ WoS subject categories are used to group journals by scientific field and to sel
 The **OpenAlex API** is used for DOI resolution and large-scale citation link retrieval (i.e., identifying papers that cite selected influential works).
 
 ### Semantic Scholar Graph API
+
 The **Semantic Scholar Graph API** is used to retrieve citation context spans and citation intent labels associated with each citing paper.  
 Citation contexts correspond to textual spans surrounding in-text citation markers.
+
 ---
 
 ## Dataset Construction Pipeline
