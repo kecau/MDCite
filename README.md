@@ -141,7 +141,7 @@ Each citation context instance contains the following fields:
 | `label` | Functional citation intent |
 | `field` | Scientific field |
 | `group_id` | Citing paper identifier |
-| `paperId` | OpenAlex work identifier |
+| `paperId` | Semantic scholar work identifier |
 | `doi` | Digital Object Identifier |
 | `venue` | Publication venue |
 | `year` | Publication year |
